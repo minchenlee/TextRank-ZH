@@ -22,7 +22,7 @@ $ pip install -U ckiptagger
 Python 3.9.12 ✅
 
 ## 範例  
-詳見 [demo.py](demo.py)、[demo.ipynb](demo.ipynb)。
+詳見 [demo.py](./demo.py)、[demo.ipynb](./demo.ipynb)。
 
 demo.py:
 
