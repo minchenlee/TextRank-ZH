@@ -109,7 +109,7 @@ tr.sentence_score_list
 |[demo.ipynb](TextRank/demo.ipynb)                                 |為範例檔案                             |
 |[similarity_compute.py](TextRank/similarity_compute.py)           |存放計算 similarity 的 funtion         |
 |[TextRank_sentence_summa.py](TextRank/TextRank_sentence_summa.py) |存放 TextRank 這個 class               |
-|[utilities.py](utilities.py)                             |存放檔案讀取、斷句、document frequency 計算、term frequency 計算、idf value 計算、stop word remove、TF-IDF 計算等 function。|
+|[utilities.py](TextRank/utilities.py)                             |存放檔案讀取、斷句、document frequency 計算、term frequency 計算、idf value 計算、stop word remove、TF-IDF 計算等 function。|
 |[text](TextRank/text)                                           |存放要被摘要的文檔                       |
 |[ckip_model_data](TextRank/ckip_model_data)                     |存放 ckip-tagger 所需的 model data     |
 
