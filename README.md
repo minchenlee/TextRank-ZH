@@ -105,13 +105,13 @@ tr.sentence_score_list
 ### file
 |                      file name                          |              descrption              |
 |---------------------------------------------------------|--------------------------------------|
-|[demo.py](demo.py)                                       |為範例檔案                             |
-|[demo.ipynb](demo.ipynb)                                 |為範例檔案                             |
-|[similarity_compute.py](similarity_compute.py)           |存放計算 similarity 的 funtion         |
-|[TextRank_sentence_summa.py](TextRank_sentence_summa.py) |存放 TextRank 這個 class               |
+|[demo.py](TextRank/demo.py)                                       |為範例檔案                             |
+|[demo.ipynb](TextRank/demo.ipynb)                                 |為範例檔案                             |
+|[similarity_compute.py](TextRank/similarity_compute.py)           |存放計算 similarity 的 funtion         |
+|[TextRank_sentence_summa.py](TextRank/TextRank_sentence_summa.py) |存放 TextRank 這個 class               |
 |[utilities.py](utilities.py)                             |存放檔案讀取、斷句、document frequency 計算、term frequency 計算、idf value 計算、stop word remove、TF-IDF 計算等 function。|
-|[text](./text)                                           |存放要被摘要的文檔                       |
-|[ckip_model_data](./ckip_model_data)                     |存放 ckip-tagger 所需的 model data     |
+|[text](TextRank/text)                                           |存放要被摘要的文檔                       |
+|[ckip_model_data](TextRank/ckip_model_data)                     |存放 ckip-tagger 所需的 model data     |
 
 
 ### About TextRank() class
