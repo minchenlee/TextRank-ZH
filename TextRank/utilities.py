@@ -43,14 +43,13 @@ def sentence_tokenizer(sentence_list):
 
 # 去除 stop word 和 punctuation，filter() 會用到
 def is_stopword(word):
-    if word == '，' or word == '（' or word == '）' or word == '「' or word == '」' or word == '、'\
-        or word == '《' or word == '》' or word == '⋯⋯' or word == '〈' or word == '〉' or word == '！'\
-        or word == '？' or word == '：':
-        
-        return True
+    stop_word_list = ['，', '（', '）', '「', '」', '、', '《', '》', '⋯⋯', '〈', '〉', '！','？', '：']
     
-    else:
-        return False
+    for stop_word in stop_word_list:
+        if word == stop_word:
+            return True
+
+    return False
 
 
 # 移除 stop word 和 punctuation
