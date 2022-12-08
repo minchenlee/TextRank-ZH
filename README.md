@@ -3,7 +3,7 @@
 句子間相似度的計算除了 TextRank 原本的 term overlap 方法，還有 TF-IDF cosine similarity 和 BM25 共三種方法可以使用。
 
 
-## dependency
+## Dependency
 numpy >= 1.7.1  
 networkx == 1.9.1  
 scipy == 1.8.0  
@@ -18,7 +18,7 @@ $ pip install -U ckiptagger
 3. ckiptagger 所需的 model data 由於檔案太大需另外下載，可從[這裡](https://drive.google.com/drive/folders/105IKCb88evUyLKlLondvDBoh7Dy_I1tm)下載，解壓後將 /data 底下的所有檔案放入 [/ckip_model_data](TextRank/ckip_model_data) 即可。
 4. 請確認 scipy == 1.8.0，版本錯誤的話 ckiptagger 會一直報錯。
 
-## compatibility
+## Compatibility
 Python 3.9.12 ✅
 
 ## 範例  
@@ -102,7 +102,7 @@ tr.sentence_score_list
 ```
 
 ## 細節
-### file
+### File
 |                      file name                          |              descrption              |
 |---------------------------------------------------------|--------------------------------------|
 |[demo.py](TextRank/demo.py)                                       |為範例檔案                             |
@@ -115,7 +115,7 @@ tr.sentence_score_list
 
 
 ### About TextRank() class
-#### attribute
+#### Attribute
 ```python
 self.sentence_list = []             # 存有每一個句子的 list
 self.word_sentence_list = []        # 存有每一個句子斷詞完的 term list
