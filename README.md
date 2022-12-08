@@ -9,7 +9,7 @@ networkx == 1.9.1
 scipy == 1.8.0  
 ckiptagger == 0.2.1    
 
-ckiptagger 需要 tensorflow>=1.13.1，建議重建一個虛擬環境，建議安裝方式如下：  
+ckiptagger 需要 tensorflow>=1.13.1，**建議重建一個虛擬環境**，建議安裝方式如下：  
 1. 先安裝 tensorflow：https://www.tensorflow.org/install
 2. 再安裝 ckiptagger 的最小版本：
 ```
