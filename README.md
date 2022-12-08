@@ -9,14 +9,14 @@ networkx == 1.9.1
 scipy == 1.8.0  
 ckiptagger == 0.2.1    
 
-ckiptagger 需要 tensorflow>=1.13.1，建議安裝方式如下：  
+ckiptagger 需要 tensorflow>=1.13.1，**建議重建一個虛擬環境**，建議安裝方式如下：  
 1. 先安裝 tensorflow：https://www.tensorflow.org/install
 2. 再安裝 ckiptagger 的最小版本：
 ```
 $ pip install -U ckiptagger
 ```
 3. ckiptagger 所需的 model data 由於檔案太大需另外下載，可從[這裡](https://drive.google.com/drive/folders/105IKCb88evUyLKlLondvDBoh7Dy_I1tm)下載，解壓後將 /data 底下的所有檔案放入 [/ckip_model_data](./ckip_model_data) 即可。
-
+4. 請確認 scipy == 1.8.0，版本錯誤的話 ckiptagger 會一直報錯。
 
 ## compatibility
 Python 3.9.12 ✅
