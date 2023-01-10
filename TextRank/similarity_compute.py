@@ -13,6 +13,9 @@ def compute_similarity(TextRank_object, sentence_1, sentence_2, index_1, index_2
 
         common_vec = [sen_1_vec[i]*sen_2_vec[i] for i in range(len(sen_1_vec))]
 
+        if len(common_vec) == 0:
+            return 0
+
         nume = sum([1 for num in common_vec if num > 0.])
         deno = math.log(len(sen_1_vec)) + math.log(len(sen_2_vec))
 

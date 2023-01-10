@@ -68,6 +68,67 @@ def remove_stop_words(word_sentence_list, pos_sentence_list):
     return word_sentence_list, pos_sentence_list
 
 
+def is_reserving_pos(pos, pos_type_list):
+    reserve_pos_type_list = []
+
+    # pos_type_list 沒有任何詞性代表不進行篩選
+    if len(pos_type_list) == 0:
+        return True
+
+    # 使用預先定義的過濾詞性組
+    for pos_type in pos_type_list:
+        if pos_type == 'noun':
+            temp = ['Na', 'Nb', 'Nc', 'Ncd', 'Nd', 'Nep',
+                    'Neqa', 'Neqb', 'Nes', 'Neu', 'Nf',
+                    'Ng', 'Nh', 'Nv', 'FW']
+
+            pos_type_list = pos_type_list + temp
+
+        if pos_type == 'verb':
+            temp = ['VA', 'VAC', 'VB', 'VC', 'VCL', 'VD',
+                    'VF', 'VE', 'VG', 'VH', 'VHC', 'VI',
+                    'VJ', 'VK', 'VL', 'V_2']
+
+            pos_type_list = pos_type_list + temp
+
+    for pos_type in pos_type_list:
+        if pos == pos_type:
+            return True
+
+    return False
+
+
+# 詞性過濾
+def pos_filter(word_sentence_list, pos_sentence_list, pos_type_list):
+    reserve_pos_list = []
+
+    for i, word_sentence in enumerate(word_sentence_list):
+        pos_sentence = pos_sentence_list[i]
+        reserve_pos_list = list(filter(lambda pos: is_reserving_pos(pos, pos_type_list), pos_sentence))
+
+        try:
+            word_sentence, pos_sentence = zip(*((word_sentence, pos_sentence) 
+                                                for word_sentence, pos_sentence in zip(word_sentence, pos_sentence)
+                                                if pos_sentence in reserve_pos_list))
+        except ValueError:
+            word_sentence, pos_sentence = [[], []]
+
+        
+        word_sentence_list[i] = list(word_sentence)
+        pos_sentence_list[i] = list(pos_sentence)
+        
+    return word_sentence_list, pos_sentence_list
+
+
+# 預處理，包含去除 stop word 和詞性過濾兩部分
+def run_pre_processing(word_sentence_list, pos_sentence_list, pos_type_list = []):
+    word_sentence_list, pos_sentence_list = remove_stop_words(word_sentence_list, pos_sentence_list)
+    word_sentence_list, pos_sentence_list = pos_filter(word_sentence_list, pos_sentence_list, 
+                                                        pos_type_list)
+
+    return word_sentence_list, pos_sentence_list
+
+
 # indexing 每一個 term-frequency，然後存入另一個 dictionary，輸入一個 dict，回傳兩個 dict
 def making_term_index_dict(dictionary):  
     """
