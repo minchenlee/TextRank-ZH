@@ -41,7 +41,7 @@ def sentence_tokenizer(sentence_list):
     return word_sentence_list, pos_sentence_list
 
 
-# 去除 stop word 和 punctuation，filter() 會用到
+# 去除 stop word 和 punctuation 的判斷函式，filter() 會用到
 def is_stopword(word):
     stop_word_list = ['，', '（', '）', '「', '」', '、', '《', '》', '⋯⋯', '〈', '〉', '！','？', '：']
     
@@ -68,6 +68,7 @@ def remove_stop_words(word_sentence_list, pos_sentence_list):
     return word_sentence_list, pos_sentence_list
 
 
+# 找出和指定詞性相符的判斷函式
 def is_reserving_pos(pos, pos_type_list):
     reserve_pos_type_list = []
 
